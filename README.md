@@ -1,2 +1,1 @@
-# Template
-This is a Template Repository
+Repo for all The Embedded Software Architecture Assignments.
