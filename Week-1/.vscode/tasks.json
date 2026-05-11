@@ -3,13 +3,15 @@
         {
             "type": "cppbuild",
             "label": "C/C++: gcc build active file",
-            "command": "/usr/bin/gcc",
+            "command": "/usr/bin/g++",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
+                "-std=c++17",
+                "${fileDirname}/main.cpp",
+                "${fileDirname}/longboard.cpp",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/main"
             ],
             "options": {
                 "cwd": "${fileDirname}"
