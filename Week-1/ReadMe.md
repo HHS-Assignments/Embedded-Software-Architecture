@@ -5,3 +5,12 @@ Dus, namespaces kunnen helpen je code te organiseren. Lees ook [Package Diagram 
 Bekijk je ontwerp van je project (wat naast de lessen loopt) tot nu toe. Bedenk hoe je je ontwerp verder kan structureren door het in te delen in packages.
 
 2. Vingeroefening met design patters: Implementeer een Singleton, en schrijf code om te testen dat het goed werkt. Liefst zie ik hier een relatie met je ontwerp van het project. Dus is er een klasse die je als singleton zou kunnen implementeren? Of waarom niet?
+
+## Uitwerking package-diagram (Week 1)
+- `UI` package: bevat `main.cpp` met de start van het programma.
+- `Domain` package: bevat `Longboard` als Singleton (`getInstance()`).
+- `Infrastructure` package: bevat standaard I/O (`iostream`, `std::cout`).
+
+Afhankelijkheden:
+- `UI` gebruikt `Domain`.
+- `Domain` gebruikt `Infrastructure` voor output.

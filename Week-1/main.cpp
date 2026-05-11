@@ -1,17 +1,25 @@
 #include <iostream>
-#include <string>
+#include "longboard.h"
 
-using namespace std;
+namespace UI {
 
-namespace test {
-    string text;
+void run() {
+    Domain::Longboard& first = Domain::Longboard::getInstance("rivira", 89);
+    Domain::Longboard& second = Domain::Longboard::getInstance("Decatlon", 104);
 
-    void test(const string& text) {
-        cout << text;
-    }
+    std::cout << std::boolalpha;
+    std::cout << "Zelfde adres: " << (&first == &second) << std::endl;
+    std::cout << first.description() << std::endl;
+    std::cout << "Merk: " << first.getBrand() << std::endl;
+    std::cout << "Lengte: " << first.getLengthCm() << " cm" << std::endl;
+    std::cout << second.description() << std::endl;
+    std::cout << "Merk: " << second.getBrand() << std::endl;
+    std::cout << "Lengte: " << second.getLengthCm() << " cm" << std::endl;
 }
 
+} // namespace UI
+
 int main() {
-    test::test("Hello World");
+    UI::run();
     return 0;
 }
