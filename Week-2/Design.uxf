@@ -1,1 +1,20 @@
-<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level></diagram>
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>350</x><y>190</y><w>200</w><h>90</h></coordinates><panel_attributes>/Positie/
+x() : Int
+y() : Int
+-
+posietie (x:int, y:int)
+move(dx : Integer, dy : Integer)
+x(): integer
+y(): integer
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>10</x><y>180</y><w>160</w><h>80</h></coordinates><panel_attributes>Robot
+-
+Robot(P:IPositie*)
+run()
+show()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>100</y><w>50</w><h>130</h></coordinates><panel_attributes>lt=&lt;-
+P</panel_attributes><additional_attributes>30;10;10;110</additional_attributes></element><element><id>UMLClass</id><coordinates><x>160</x><y>40</y><w>210</w><h>70</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+/IPositie/
+-
+x() : Integer
+y() : Integer
+move(dx : Integer, dy : Integer)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>100</y><w>60</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;20;60;40;90</additional_attributes></element></diagram>
