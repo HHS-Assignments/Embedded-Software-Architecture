@@ -1,1 +1,34 @@
-<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level></diagram>
+<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><help_text>Class diagram derived from code: model, sensor, ui</help_text><element><id>UMLClass</id><coordinates><x>33</x><y>325</y><w>200</w><h>120</h></coordinates><panel_attributes>Machine
+// abstract interface
+--
+run()
+halt()
+motor1(): Motor
+motor2(): Motor</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>273</x><y>225</y><w>220</w><h>160</h></coordinates><panel_attributes>Motor
+--
+name_: string
+baseTemperature_: int
+running_: bool
+currentTemperature_: int
+sensor_: TSensor
+--
+Motor(name, baseTemperature)
+start()
+stop()
+tsensor(): TSensor
+name(): string
+running(): bool
+temperature(): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>633</x><y>225</y><w>180</w><h>120</h></coordinates><panel_attributes>TSensor
+--
+temperatureSource_: int*
+lastRead_: int
+--
+TSensor(sourceRef)
+read(): int
+temperatuur(): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>33</x><y>485</y><w>200</w><h>80</h></coordinates><panel_attributes>Mone
+// concrete Motor
+--
+Mone(): Motor</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>273</x><y>485</y><w>200</w><h>80</h></coordinates><panel_attributes>Mtwo
+// concrete Motor
+--
+Mtwo(): Motor</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>513</x><y>365</y><w>260</w><h>160</h></coordinates><panel_attributes></panel_attributes><additional_attributes></additional_attributes></element></diagram>
