@@ -1,34 +1,62 @@
-<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><help_text>Class diagram derived from code: model, sensor, ui</help_text><element><id>UMLClass</id><coordinates><x>33</x><y>325</y><w>200</w><h>120</h></coordinates><panel_attributes>Machine
-// abstract interface
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>63</x><y>180</y><w>189</w><h>126</h></coordinates><panel_attributes>«interface»
+model::Machine
 --
-run()
-halt()
-motor1(): Motor
-motor2(): Motor</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>273</x><y>225</y><w>220</w><h>160</h></coordinates><panel_attributes>Motor
 --
-name_: string
-baseTemperature_: int
-running_: bool
-currentTemperature_: int
-sensor_: TSensor
++run() : void
++halt() : void
++motor1() : Motor&amp;
++motor2() : Motor&amp;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>306</x><y>108</y><w>225</w><h>180</h></coordinates><panel_attributes>«abstract»
+model::Motor
 --
-Motor(name, baseTemperature)
-start()
-stop()
-tsensor(): TSensor
-name(): string
-running(): bool
-temperature(): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>633</x><y>225</y><w>180</w><h>120</h></coordinates><panel_attributes>TSensor
+-name_ : std::string
+-baseTemperature_ : int
+-running_ : bool
+-currentTemperature_ : int
+-sensor_ : TSensor
 --
-temperatureSource_: int*
-lastRead_: int
++start() : void
++stop() : void
++tsensor() : TSensor&amp;
++name() : const std::string&amp;
++running() : bool
++temperature() : int
+#runningTemperatureDelta() : int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>630</x><y>360</y><w>153</w><h>63</h></coordinates><panel_attributes>model::Mone
 --
-TSensor(sourceRef)
-read(): int
-temperatuur(): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>33</x><y>485</y><w>200</w><h>80</h></coordinates><panel_attributes>Mone
-// concrete Motor
 --
-Mone(): Motor</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>273</x><y>485</y><w>200</w><h>80</h></coordinates><panel_attributes>Mtwo
-// concrete Motor
++Mone()
+/base=40, delta=30/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>819</x><y>369</y><w>153</w><h>63</h></coordinates><panel_attributes>model::Mtwo
 --
-Mtwo(): Motor</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>513</x><y>365</y><w>260</w><h>160</h></coordinates><panel_attributes></panel_attributes><additional_attributes></additional_attributes></element></diagram>
+--
++Mtwo()
+/base=45, delta=30/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>612</x><y>99</y><w>180</w><h>108</h></coordinates><panel_attributes>sensor::TSensor
+--
+-temperatureSource_ : int*
+-lastRead_ : int
+--
++read() : int
++temperatuur() : int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>207</x><y>585</y><w>261</w><h>153</h></coordinates><panel_attributes>model::ProductionMachine
+--
+-mone_ : Mone
+-mtwo_ : Mtwo
+-observers_ : vector&lt;TemperatureObserver*&gt;
+--
++ProductionMachine()
++run() : void
++halt() : void
++motor1() : Motor&amp;
++motor2() : Motor&amp;
++mone() : Mone&amp;
++mtwo() : Mtwo&amp;
++attachObserver(observer : TemperatureObserver&amp;)
+-notify(motor : const Motor&amp;, temperature : int)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>279</x><y>396</y><w>207</w><h>81</h></coordinates><panel_attributes>«interface»
+ui::TemperatureObserver
+--
+--
++onTemperature(motorName : const std::string&amp;, temperature : int) : void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>630</x><y>666</y><w>207</w><h>81</h></coordinates><panel_attributes>ui::ConsoleObserver
+--
+-events_ : vector&lt;pair&lt;string,int&gt;&gt;
+--
++onTemperature(motorName, temperature) : void
++events() : const vector&lt;pair&lt;string,int&gt;&gt;&amp;</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>144</x><y>297</y><w>90</w><h>306</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>80;320;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>279</y><w>432</w><h>99</h></coordinates><panel_attributes>lt=-&gt;&gt;</panel_attributes><additional_attributes>460;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>522</x><y>270</y><w>387</w><h>117</h></coordinates><panel_attributes>lt=-&gt;&gt;</panel_attributes><additional_attributes>410;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>522</x><y>189</y><w>108</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1</panel_attributes><additional_attributes>100;20;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>324</x><y>414</y><w>405</w><h>189</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>430;10;10;190</additional_attributes></element><element><id>Relation</id><coordinates><x>459</x><y>423</y><w>378</w><h>189</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>400;10;10;190</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>423</y><w>216</w><h>225</h></coordinates><panel_attributes>lt=-&gt;
+m2=0..*</panel_attributes><additional_attributes>220;230;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>378</x><y>468</y><w>369</w><h>216</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;390;220</additional_attributes></element><element><id>Relation</id><coordinates><x>387</x><y>279</y><w>63</w><h>324</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>10;340;50;10</additional_attributes></element><element><id>UMLPackage</id><coordinates><x>576</x><y>486</y><w>315</w><h>315</h></coordinates><panel_attributes>UI</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>45</x><y>54</y><w>513</w><h>711</h></coordinates><panel_attributes>Motor</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLPackage</id><coordinates><x>576</x><y>54</y><w>306</w><h>225</h></coordinates><panel_attributes>Temp Sensor</panel_attributes><additional_attributes></additional_attributes></element></diagram>
